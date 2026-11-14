@@ -6,7 +6,7 @@ authors:
 lastUpdated: 2026-06-30
 ---
 
-**[GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)** en VS Code lleva GitHub Copilot al editor de código que ya utilizas. Al trabajar en Visual Studio Code (y GitHub Codespaces), dirigirás Copilot Chat en modo agente, conectarás herramientas externas mediante MCP y utilizarás agentes personalizados, todo ello sin salir del IDE, donde Copilot puede ver todos tus archivos, el terminal y los problemas.
+**[GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)** en VS Code lleva GitHub Copilot al editor de código que ya utilizas. Al trabajar en Visual Studio Code (y GitHub Codespaces), dirigirás Copilot Chat en modo agente, conectarás herramientas externas mediante Model Context Protocol (MCP) y utilizarás agentes personalizados, todo ello sin salir del entorno de desarrollo integrado (IDE), donde Copilot puede ver todos tus archivos, el terminal y los problemas detectados.
 
 Empezarás por añadir instrucciones personalizadas y observar cómo las sigue Copilot; después, utilizarás el modo agente para crear una funcionalidad de filtrado que abarque la interfaz, la capa de datos y las pruebas. A continuación, conectarás el servidor MCP de Playwright y dejarás que Copilot maneje un navegador para probar la funcionalidad antes de abrir una solicitud de incorporación de cambios. Por último, revisarás y utilizarás un agente personalizado para trabajar en la accesibilidad y, después, supervisarás, dirigirás e iterarás sobre los cambios de Copilot, todo ello sin salir del editor.
 
@@ -17,11 +17,11 @@ Empezarás por añadir instrucciones personalizadas y observar cómo las sigue C
 | [0. Requisitos previos][ex0] | Configuración | Crea tu repositorio y tu codespace |
 | [1. Instrucciones personalizadas][ex1] | Contexto | Añade y verifica instrucciones personalizadas en VS Code |
 | [2. Modo agente][ex2] | Generación de código | Crea una funcionalidad de filtrado con el modo agente |
-| [3. MCP con Playwright][ex3] | Herramientas externas | Prueba la funcionalidad en un navegador con el servidor MCP de Playwright |
+| [3. Probar la funcionalidad con Model Context Protocol (MCP) de Playwright][ex3] | Herramientas externas | Prueba la funcionalidad en un navegador con el servidor MCP de Playwright |
 | [4. Agentes personalizados][ex4] | Agentes especializados | Revisa y utiliza agentes personalizados |
 | [5. Gestión de agentes][ex5] | Supervisión | Supervisa y dirige sesiones de agentes |
 | [6. Iteración][ex6] | Revisión | Revisa el trabajo de Copilot localmente y elige los siguientes pasos |
-| [Opcional: Incorporar Foundry][foundry-toolkit] | Agentes de IA | Prepara un modelo, implementa un agente y conéctalo al sitio en tres módulos con VS Code y Foundry Toolkit |
+| [Opcional: Incorporar Foundry][foundry-toolkit] | Agentes de inteligencia artificial (IA) | Prepara un modelo, implementa un agente y conéctalo al sitio en tres módulos con VS Code y Foundry Toolkit |
 
 ## Requisitos previos
 

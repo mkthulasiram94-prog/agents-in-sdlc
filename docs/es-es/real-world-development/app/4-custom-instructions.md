@@ -6,7 +6,7 @@ authors:
 lastUpdated: 2026-07-09
 ---
 
-El contexto es fundamental al trabajar con IA generativa. Si una tarea debe realizarse de una forma concreta, conviene que esas directrices estén disponibles para Copilot. Los [archivos de instrucciones][instruction-files] describen no solo *qué* código quieres, sino también *cómo* debe estructurarse. Ahora que has creado el filtrado, explorarás las instrucciones que ha utilizado Copilot, añadirás un estándar de documentación y lo aplicarás al código.
+El contexto es fundamental al trabajar con inteligencia artificial (IA) generativa. Si una tarea debe realizarse de una forma concreta, conviene que esas directrices estén disponibles para Copilot. Los [archivos de instrucciones][instruction-files] describen no solo *qué* código quieres, sino también *cómo* debe estructurarse. Ahora que has creado el filtrado, explorarás las instrucciones que ha utilizado Copilot, añadirás un estándar de documentación y lo aplicarás al código.
 
 En esta lección:
 
@@ -64,8 +64,9 @@ Aunque los archivos existentes son un buen punto de partida, todavía hay alguna
 > Como los archivos de instrucciones influyen mucho en el código que genera Copilot, debes asegurarte de que lo orienten con claridad. Puedes pedir a Copilot que cree una primera versión y, después, revisarla para comprobar que las actualizaciones cumplen los requisitos. También puedes consultar una [colección de archivos de instrucciones en Awesome Copilot][awesome-copilot] como punto de partida.
 
 1. En el mismo lienzo de archivos, ve a `.github/copilot-instructions.md`.
-2. Busca el encabezado **Code formatting requirements**, aproximadamente a mitad del archivo.
-3. Añade lo siguiente como último punto debajo de ese encabezado:
+2. Selecciona el botón de código (el icono `<>`) de la barra de herramientas del archivo para cambiar a la vista editable del código fuente.
+3. Busca el encabezado **Code formatting requirements**, aproximadamente a mitad del archivo.
+4. Añade lo siguiente como último punto debajo de ese encabezado:
 
    ```plaintext
    All new TypeScript should contain TSDocs comments for documentation purposes.

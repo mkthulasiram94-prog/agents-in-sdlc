@@ -9,7 +9,7 @@ lastUpdated: 2026-09-28
 
 Realiza un recorrido práctico por GitHub Copilot en Visual Studio Code, pensado para principiantes. Crearás un Space Quiz lleno de color desde una carpeta vacía y aprenderás el ciclo de trabajo del editor: crear en un área de trabajo, inspeccionar el contexto, probar antes de que Git escriba nada, planificar antes de editar y dejar que las herramientas de GitHub gestionen incidencias y solicitudes de incorporación de cambios sin salir de VS Code.
 
-El taller dura aproximadamente entre 60 y 90 minutos. El proyecto utiliza un único archivo HTML sin dependencias de ejecución, así que puedes centrarte en aprender a usar Copilot en el editor.
+El taller dura aproximadamente entre 60 y 90 minutos. El proyecto utiliza un único archivo de lenguaje de marcado de hipertexto (HTML) sin dependencias de ejecución, así que puedes centrarte en aprender a usar Copilot en el editor.
 
 > [!NOTE]
 > Este taller fue creado por [James Montemagno][james] y adaptado de [Primeros pasos con GitHub Copilot][source-lab]. El contenido original está disponible bajo la [licencia MIT][source-license].
@@ -24,7 +24,7 @@ El taller dura aproximadamente entre 60 y 90 minutos. El proyecto utiliza un ún
 | [3. Inspeccionar el contexto y probar][lesson-3] | Pruebas | Inspecciona el contexto del chat y ejecuta una prueba de humo antes de que Git escriba nada |
 | [4. Publicar el proyecto][lesson-4] | Publicación | Inicializa, crea un commit y publica con Source Control |
 | [5. Planificar antes de editar][lesson-5] | Planificación | Utiliza el modo Plan para acordar un enfoque para la siguiente funcionalidad |
-| [6. Dar a Copilot herramientas para trabajar con GitHub][lesson-6] | Herramientas | Habilita y revisa el servidor MCP de GitHub |
+| [6. Dar a Copilot herramientas para trabajar con GitHub][lesson-6] | Herramientas | Habilita y revisa el servidor de Model Context Protocol (MCP) de GitHub |
 | [7. Planificar e implementar incidencias][lesson-7] | Implementación | Crea incidencias con las herramientas de GitHub e implementa una en una sesión nueva |
 | [8. Revisar y combinar][lesson-8] | Revisión | Crea una solicitud de incorporación de cambios desde Source Control, solicita una revisión y combínala |
 | [9. Delegar a una sesión en la nube][lesson-9] | Delegación | Cambia el entorno a Cloud y delega una nueva funcionalidad |

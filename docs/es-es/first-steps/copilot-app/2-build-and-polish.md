@@ -33,7 +33,7 @@ Cuando el agente termine, responde a varias preguntas y confirma que:
 
 ## Inspecciona el código generado
 
-Contrae la barra lateral izquierda y el panel del explorador de la derecha y, después, revisa `index.html` en el área de código ampliada. Observa cómo HTML, CSS y JavaScript funcionan juntos en un único archivo. Restaura ambos paneles cuando termines.
+Contrae la barra lateral izquierda y el panel del explorador de la derecha y, después, revisa `index.html` en el área de código ampliada. Observa cómo el lenguaje de marcado de hipertexto (HTML), las hojas de estilo en cascada (CSS) y JavaScript funcionan juntos en un único archivo. Restaura ambos paneles cuando termines.
 
 ## Perfecciona con el selector de elementos
 

@@ -3,24 +3,24 @@ slug: ja-jp/real-world-development/app
 title: "GitHub Copilot app"
 authors:
   - geektrainer
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-22
 ---
 
-[**GitHub Copilot app**](https://docs.github.com/copilot/concepts/agents/github-copilot-app) は Copilot CLI を基盤とするデスクトップアプリケーションで、エージェント主導の開発を単一の作業用ワークスペースで実現します。並列エージェントセッション、切り替え可能なセッションモード、共有キャンバス、GitHub Issue と pull request のネイティブ管理機能を備えています。さらに、リベース、レビューのフィードバック、継続的インテグレーション (CI) の修正、マージまで pull request を導く **Agent Merge** も利用できます。
+[**GitHub Copilot app**](https://docs.github.com/copilot/concepts/agents/github-copilot-app) は Copilot CLI を基盤とするデスクトップ アプリケーションで、エージェント主導の開発を 1 つの作業用 workspace で実現します。並列エージェント セッション、切り替え可能なセッション モード、共有 Canvas、GitHub issue とプルリクエストのネイティブ管理機能を備えています。さらに、rebase、レビュー フィードバック、継続的インテグレーション (CI) の修正、マージまでプルリクエストを進める **Agent Merge** も利用できます。
 
-このワークショップでは、Tailspin Toys の1つの連続したワークフローに取り組みます。
+このワークショップでは、Tailspin Toys の一連のワークフローに取り組みます。
 
-1. プロジェクトを準備し、アプリをインストールしてリポジトリを接続し、ワークスペースと用意されたバックログを確認します。
-2. 星評価に対象を絞った変更を加えてブラウザーでレビューし、最初の pull request (PR) を手動でマージします。
-3. フィルター機能の Issue から開始し、**Plan** モードでアプローチを定義して、**Autopilot** モードで構築した後、**Interactive** モードでレビューします。
-4. リポジトリの指示を更新し、フィルター機能の作業に適用します。
-5. 既存の `quality-checks` スキルをカスタマイズし、プロジェクトのチェックに使用します。
-6. Playwright Model Context Protocol (MCP) server を追加し、ブラウザーでフィルター機能を確認します。
-7. 品質保証 (QA) カスタムエージェントを作成し、要件、カバレッジ、検証の証拠をレビューします。
-8. フィルター機能の変更全体をレビューし、2つ目の PR に Agent Merge を使用します。
-9. 既存の Database Explorer キャンバスを使用してから、リポジトリに保存するトリアージキャンバスを作成してテストします。
+1. プロジェクトを準備し、app をインストールしてリポジトリを接続し、workspace と用意されたバックログを確認します。
+2. 星評価の表示を変更し、ブラウザーでレビューして、最初のプルリクエスト (PR) を手動でマージします。
+3. 絞り込み issue から始め、**Plan** モードで方針を決め、**Autopilot** モードで構築して、**Interactive** モードでレビューします。
+4. リポジトリの instruction を更新し、絞り込み作業に適用します。
+5. 既存の `quality-checks` skill をカスタマイズして、プロジェクトのチェックを実行します。
+6. Playwright Model Context Protocol (MCP) server を追加し、ブラウザーで絞り込み機能を確認します。
+7. quality assurance (QA) custom agent を作成し、要件、テスト範囲、検証の根拠をレビューします。
+8. 絞り込み機能全体をレビューし、2 件目の PR に Agent Merge を使います。
+9. Canvas の利用可否を確認してから、Database Explorer を使い、リポジトリに保存するトリアージ Canvas を作成してテストします。必要な機能を利用できない場合は、ブロッカーを記録し、読み取り専用の代替手段を使うか、まとめに進みます。
 
-ワークショップの焦点を絞るため、作成する PR は2つです。1つ目は星評価、2つ目はフィルター機能と、指示・スキル・QA プロファイル・テストの更新です。それぞれ更新済みの `main` から開始します。フィルター機能と品質に関するワークフローでは1つのセッション、worktree、ブランチを共有するため、各ツールを確認しながら、それまでの作業を活用できます。最後のキャンバス演習はそのセッション内に保持し、PR ワークフローを繰り返すのではなく、共有サーフェスの作成とテストに集中します。
+ワークショップの焦点を絞るため、PR は 2 件作成します。星評価用と、instruction の更新、skill の更新、QA profile、テストを含む絞り込み用です。それぞれ更新済みの `main` から開始します。絞り込みと品質確認の作業は 1 つの session、worktree、branch で続けるため、各 tool を試しながらそれまでの作業を活用できます。最後の Canvas 演習も同じ session で行い、PR workflow を繰り返さず、共有 surface の作成とテストに集中します。
 
 ## レッスン
 
@@ -53,7 +53,7 @@ lastUpdated: 2026-09-17
 > Copilot app は codespace ではなく自分のコンピューターで実行するため、[レッスン 0][ex0] では、アプリをインストールする前に Node.js をインストールし、プロジェクトの自分用コピーを作成します。
 
 > [!NOTE]
-> Copilot Business または Copilot Enterprise を使用している場合、アプリを使用するには管理者が **Copilot CLI** ポリシーを有効にする必要があります。
+> Copilot Business または Copilot Enterprise を使用している場合、管理者が **GitHub Copilot app** policy を有効にしておく必要があります。これは Copilot CLI policy とは別の設定です。
 
 ## はじめる
 

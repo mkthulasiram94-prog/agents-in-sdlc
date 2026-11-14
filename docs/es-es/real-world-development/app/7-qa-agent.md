@@ -1,12 +1,12 @@
 ---
-title: "Lección 7 - Crear y utilizar un agente de QA"
-description: "Crea un perfil de QA que parta de los requisitos y combine cobertura de pruebas, la habilidad quality-checks y observaciones directas del navegador."
+title: "Lección 7 - Crear y utilizar un agente de control de calidad (QA)"
+description: "Crea un perfil de control de calidad (QA) que parta de los requisitos y combine la cobertura de pruebas, la habilidad quality-checks y el servidor de Model Context Protocol (MCP) de Playwright."
 authors:
   - geektrainer
 lastUpdated: 2026-09-17
 ---
 
-Has utilizado la habilidad `quality-checks` para ejecutar comprobaciones automatizadas y MCP de Playwright para observar la experiencia de filtrado en un navegador. Ahora reunirás estas capacidades en un agente personalizado con un proceso de QA claramente definido.
+Has utilizado la habilidad `quality-checks` para ejecutar comprobaciones automatizadas y el servidor de Model Context Protocol (MCP) de Playwright para observar la experiencia de filtrado en un navegador. Ahora reunirás estas capacidades en un agente personalizado con un proceso de control de calidad (QA) claramente definido.
 
 En esta lección:
 
@@ -38,6 +38,8 @@ Antes de abrir la PR de la funcionalidad, pedirás a Copilot que cree un perfil 
     ```
 
 ## Examinar el perfil
+
+Antes de utilizar el nuevo agente, revisarás su perfil para confirmar que Copilot ha recogido el flujo de QA y sus límites. Así evitarás que un agente incompleto o demasiado amplio cambie la funcionalidad cuando solo quieres verificarla.
 
 1. Abre **Changes** y selecciona `.github/agents/qa.agent.md`.
 2. Lee el frontmatter. `description` es obligatorio; `name` es opcional, pero incluirlo proporciona al agente un nombre visible claro.

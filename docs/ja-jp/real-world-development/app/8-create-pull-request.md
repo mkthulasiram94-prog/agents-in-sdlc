@@ -1,71 +1,79 @@
 ---
-title: "レッスン 8 - 機能の PR の作成とマージ"
-description: "フィルター機能、指示、スキルの更新、QA プロファイル、テストをまとめてレビューし、PR を作成して Agent Merge を使用します。"
+title: "レッスン 8 - 機能 PR を作成してマージする"
+description: "絞り込み、instruction、skill 更新、QA profile、テストをまとめてレビューし、Agent Merge を使います。"
 authors:
   - geektrainer
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-22
 ---
 
-フィルター機能の実装、指示の更新、スキルの更新、品質保証 (QA) プロファイル、テストを1つのブランチに保存しました。これらをまとめてレビューし、pull request を作成します。星評価の pull request (PR) は自分でマージしましたが、今回は **Agent Merge** にプロセスの管理を任せます。
+絞り込みの実装、instruction の更新、skill の更新、quality assurance (QA) profile、テストは同じ branch に保存されています。まとめてレビューし、pull request を作成します。星評価のプルリクエスト (PR) は手動でマージしましたが、今回は **Agent Merge** にプロセスを任せます。
 
 > [!NOTE]
-> 通常は、機能、指示の更新、スキルの更新、QA エージェントをいくつかの別々の PR に分けます。ワークショップを円滑に進めるため、フィルター機能と品質に関するワークフロー全体を1つのセッションとブランチで進め、そのすべての作業をこの PR にまとめました。
+> 通常は機能、instruction、skill、QA agent を複数の PR に分けます。ワークショップでは、絞り込みと品質の作業を 1 つの session と branch で進め、1 件の PR にまとめています。
 
-このレッスンでは、次の内容を学習します。
+このレッスンでは、次のことを行います。
 
-- Agent Merge の概要と、マージのライフサイクルを自動化する仕組みを学ぶ。
-- 機能の PR 全体と検証の証拠を確認する。
-- レビュー後にのみ Agent Merge を承認し、PR のマージを確認する。
+- Agent Merge と、マージ ライフサイクルを自動化する方法を確認します。
+- 機能 PR 全体と検証結果を確認します。
+- レビュー後に Agent Merge を許可し、PR がマージされたことを確認します。
 
 ## シナリオ
 
-フィルター機能のワークフロー全体を通じて、Copilot を使用して機能の計画、実装、検証を行いました。Tailspin Toys は、マージの承認を開発者の管理下に置きながら、残りの PR 作業を自動化したいと考えています。
+絞り込みのワークフローでは、Copilot を使って機能を計画、実装、検証しました。Tailspin Toys では、マージの許可を開発者の管理下に置いたまま、PR の残りの作業を自動化したいと考えています。
 
-## Agent Merge の概要
+## Agent Merge とは
 
-**Agent Merge** を使うと、Copilot app で pull request をマージするまでの最終工程を自動化できます。有効にすると、アプリのセッションが pull request を読み取り、失敗した CI チェックの修正、レビューコメントへの対応、必要に応じたリベースなど、マージを妨げる問題に対処します。そして GitHub で許可され次第、pull request をマージします。バックグラウンドで動作し、アプリを再起動しても継続し、pull request がマージされると自動的に無効になります。
+**Agent Merge** は、GitHub Copilot app でプルリクエストをマージするために残っている作業を自動化します。有効にすると、session が PR を読み取り、失敗した continuous integration (CI) check の修正、レビュー コメントへの対応、必要な場合の rebase など、マージを妨げている要因に対処します。GitHub が許可するとすぐにマージします。バックグラウンドで実行され、app を再起動しても継続し、PR がマージされると自動的に停止します。
 
-ここまでは、自分で **Merge pull request** を選択していました。Agent Merge に任せることもできますが、コードの編集やマージには引き続き明示的な承認が必要です。マージを許可する前に、許可される操作と作業内容をレビューしてください。
+これまでは自分で **Merge pull request** を選択していました。Agent Merge はその作業を引き受けますが、コードの編集とマージには開発者の明示的な許可が必要です。許可する操作と作業内容を確認してから、マージ権限を与えてください。
 
 ## Agent Merge で PR を管理する
 
-コードの作成とレビューが完了したので、Agent Merge に PR プロセスを管理させましょう。
+コードの作成とレビューが完了したら、Agent Merge に PR の処理を任せます。
 
-1. エージェントピッカーで **Default agent** を選択します。
-2. **Create PR** の横にあるドロップダウンを選択します。
-3. **Agent merge** を選択します。ボタンが **Agent merge** に変わります。
-4. **Agent merge** を選択し、Agent Merge のプロセスを開始します。
+1. agent picker で **Default agent** を選択します。
+2. **Create PR** の横にある dropdown を選択します。
+3. **Agent Merge** を選択します。ボタンが **Agent Merge** に変わります。
+4. **Agent Merge** ボタンを選択して処理を開始します。dropdown の項目を選んだだけでは開始されません。
 
-Agent Merge のプロセスが開始され、次の処理を行います。
+Agent Merge は次の作業を行います。
 
-- タイトルと説明を含む pull request を作成します。
-- Issue からセッションを開始した場合は、説明の本文で関連する Issue を参照します。
-- リベースを行うか、ターゲットブランチとのマージ競合に対処します。
-- CI プロセスを監視し、すべてのチェックが成功することを確認します。
-- 他の開発者または Copilot code review からのフィードバックがないか PR を監視し、コメントを解決するために更新します。
-- 必要に応じて、すべてが成功した後に PR を自動的にマージできます。
+- タイトルと説明を付けて PR を作成します。
+- issue から session を開始した場合は、説明文で関連 issue に言及します。
+- target branch との rebase や merge conflict に対処します。
+- CI を監視し、すべての check が成功することを確認します。
+- 他の開発者や Copilot code review からの feedback を確認し、comment を解決する変更を加えます。
+- 必要に応じて、すべて成功した後に PR を自動でマージします。
 
-すべてが成功したら Agent Merge が PR もマージするように設定します。
+すべての check が成功した後に Agent Merge が PR をマージするよう許可します。
 
-5. **Agent merge** の横にあるドロップダウンを選択します。
-6. **Merge pull request** の横にチェックが付いていることを確認します。
+5. マージを許可する前に、PR の diff と検証結果をレビューします。
+6. **Agent Merge** の横にある dropdown を選択します。
+7. **Merge pull request** の横にチェックが付いていることを確認します。
+8. 次の prompt で、明示的にマージを依頼します。
+
+   ```plaintext
+   Merge the PR once all required checks and approvals pass. Do not bypass repository protections.
+   ```
+
+9. 進捗を確認し、報告されたブロッカーに対処します。次に進む前に PR の状態が **Merged** であることを確認します。merge permission が有効になったことや agent が動作中であることだけでは、マージ完了の確認になりません。
 
 > [!IMPORTANT]
-> Agent Merge は、リポジトリの保護や権限不足を回避しません。続行前にそれらの阻害要因を解消してください。
+> Agent Merge は、必須の承認、ブランチ保護、マージ キュー、リポジトリ設定、権限の不足を回避しません。ブロックされた場合は、報告された理由を確認し、リポジトリで許可されていればレビュー済みの変更を手動でマージします。
 
 ## まとめと次のステップ
 
-コードの生成、テストと検証、pull request のプロセスなど、開発プロセスの複数の部分を自動化しました。具体的には、次の作業を行いました。
+コードの生成、テストと検証、pull request の処理を自動化しました。
 
-- Agent Merge の概要と、マージのライフサイクルを自動化する仕組みを学習した。
-- 機能の PR 全体と検証の証拠を確認した。
-- レビュー後にのみ Agent Merge を承認し、PR がマージされたことを確認した。
+- Agent Merge と、マージ ライフサイクルを自動化する方法を確認しました。
+- 機能 PR 全体と検証結果をレビューしました。
+- レビュー後に Agent Merge を許可し、PR がマージされたことを確認しました。
 
-次は、[既存のキャンバスを使用してトリアージキャンバスを作成し][next-lesson]、エージェントと一緒に作業を確認、計画、視覚化するための、より豊かな方法を学びます。
+次は、[既存の Canvas を使い、トリアージ Canvas を作成します][next-lesson]。agent と一緒に作業を確認、計画、視覚化する方法を試します。
 
 ## リソース
 
-- [GitHub Copilot app での Issue と pull request の管理][managing-issues-prs]
+- [GitHub Copilot app で issue とプルリクエストを管理する][managing-issues-prs]
 - [GitHub Copilot app について][about-copilot-app]
 
 [next-lesson]: ../9-canvases/

@@ -56,7 +56,7 @@ Usarás Azure para hospedar el Backer Concierge y Copilot CLI para guiar el trab
     /plugin marketplace add microsoft/azure-skills
     ```
 
-10. Instala el [complemento Azure Skills][azure-skills], que añade habilidades de Azure, Azure MCP Server y Foundry MCP Server a GitHub Copilot CLI:
+10. Instala el [complemento Azure Skills][azure-skills], que añade habilidades de Azure, el servidor de Model Context Protocol (MCP) de Azure y Foundry MCP Server a GitHub Copilot CLI:
 
     ```text
     /plugin install azure@azure-skills

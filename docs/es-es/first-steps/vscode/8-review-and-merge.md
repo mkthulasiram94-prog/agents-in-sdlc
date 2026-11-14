@@ -6,7 +6,7 @@ authors:
 lastUpdated: 2026-10-05
 ---
 
-Inspecciona, revisa y combina el nuevo trabajo con las herramientas de GitHub en VS Code.
+Inspecciona, revisa y combina el nuevo trabajo con las herramientas de GitHub en VS Code mediante el servidor de Model Context Protocol (MCP).
 
 En esta lección:
 
@@ -17,8 +17,10 @@ En esta lección:
 
 ## Inspecciona, revisa y combina
 
+Primero revisarás los cambios y crearás la solicitud desde **Source Control**; después, atenderás la revisión y las comprobaciones antes de combinarla.
+
 > [!IMPORTANT]
-> Copilot Free no incluye la revisión de código de Copilot para solicitudes de incorporación de cambios. Utiliza Copilot Student o un plan de pago de Copilot que incluya la revisión de código. Una organización también puede habilitar la revisión de código de pago en GitHub.com para miembros sin una licencia de Copilot, pero esto no concede acceso a la revisión de código en los IDE. Consulta la [disponibilidad de la revisión de código de Copilot][code-review].
+> Copilot Free no incluye la revisión de código de Copilot para solicitudes de incorporación de cambios. Utiliza Copilot Student o un plan de pago de Copilot que incluya la revisión de código. Una organización también puede habilitar la revisión de código de pago en GitHub.com para miembros sin una licencia de Copilot, pero esto no concede acceso a la revisión de código en los entornos de desarrollo integrados (IDE). Consulta la [disponibilidad de la revisión de código de Copilot][code-review].
 >
 > Si no tienes acceso, omite la solicitud de revisión de Copilot del paso 4. Revisa las diferencias tú mismo o pide a un compañero que las revise y continúa con los pasos restantes, atendiendo los comentarios de los revisores humanos y volviendo a probar antes de combinar.
 
@@ -26,7 +28,7 @@ En esta lección:
 2. Crea un commit con el nuevo trabajo utilizando de nuevo el botón **sparkle** para escribir el mensaje.
 3. Selecciona el botón **Create Pull Request** que aparece en **Source Control**. Copilot redacta el título y la descripción a partir de tus commits, así que obtienes una solicitud de incorporación de cambios mejor que si la pides desde cero.
 4. Solicita una **Copilot code review** mientras creas la solicitud de incorporación de cambios, desde la vista **GitHub** de VS Code o en GitHub.
-5. Pide a Copilot, con GitHub MCP, que inspeccione la solicitud de incorporación de cambios, resuelva los conflictos de combinación, atienda los comentarios de revisión e investigue las comprobaciones de CI que fallen.
+5. Pide a Copilot, con GitHub MCP, que inspeccione la solicitud de incorporación de cambios, resuelva los conflictos de combinación, atienda los comentarios de revisión e investigue las comprobaciones de integración continua (CI) que fallen.
 6. Vuelve a probar en el explorador integrado, revisa cada cambio propuesto y actualiza la rama.
 7. Cuando las comprobaciones y la revisión hayan terminado, pide al agente que combine la solicitud o combínala desde la integración de GitHub.
 

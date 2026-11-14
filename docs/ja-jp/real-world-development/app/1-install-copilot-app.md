@@ -1,106 +1,103 @@
 ---
-title: "レッスン 1 - GitHub Copilot app のインストール"
-description: "GitHub Copilot app をインストールし、テンプレートから作成したリポジトリを接続して、ワークスペースを確認し、クイックチャットを試します。"
+title: "レッスン 1 - GitHub Copilot app をインストールする"
+description: "GitHub Copilot app をインストールし、template から作成したリポジトリを接続し、workspace と簡単なチャットを試します。"
 authors:
   - geektrainer
-lastUpdated: 2026-10-05
+lastUpdated: 2026-10-22
 ---
 
-[**GitHub Copilot app**][about-copilot-app] は、エージェント主導の開発に使用するデスクトップアプリケーションです。GitHub Copilot CLI を基盤とし、GitHub とネイティブに統合されているため、リポジトリ、ブランチ、CI パイプラインをすぐに利用できます。すべての作業を自分で行うのではなく、複数のエージェントをそれぞれ分離されたワークスペースで並列に指示し、繰り返し発生するタスクを自動化するワークフロー向けに設計されています。Node.js のインストールとプロジェクトのコピーが完了したので、次はアプリをインストールして、そのリポジトリを接続します。
+**[GitHub Copilot app][about-copilot-app]** は、エージェント主導の開発に使用するデスクトップ アプリケーションです。GitHub Copilot CLI を基盤とし、GitHub とネイティブに統合されているため、リポジトリ、ブランチ、継続的インテグレーション (CI) pipeline をすぐに利用できます。自分ですべての作業を行う代わりに、分離された workspace で複数の agent を並行して動かし、反復作業を自動化する workflow 向けに設計されています。Node.js のインストールとプロジェクトの準備ができたので、app をインストールしてリポジトリを接続します。
 
-このレッスンでは、次の内容を学習します。
+このレッスンでは、次のことを行います。
 
-- GitHub Copilot app をインストールしてサインインする。
-- GitHub リポジトリからプロジェクトをアプリに追加する。
-- テンプレートによって用意されたバックログを含め、ワークスペースを確認する。
-- クイックチャットを試して、アプリ自体について学ぶ。
+- GitHub Copilot app をインストールしてサインインします。
+- GitHub リポジトリからプロジェクトを app に追加します。
+- template が用意したバックログを含め、workspace を確認します。
+- app 自体について知るため、簡単なチャットを試します。
 
 ## シナリオ
 
-チームは、増え続けるバックログに対応するために AI エージェントを導入しています。Copilot app では、Issue の選択、エージェントの実行、変更のレビュー、pull request のマージを一か所から指示できます。このレッスンでは、アプリをインストールして接続し、プロジェクトについての会話を始められるようにします。
+チームは、増え続けるバックログに取り組むため人工知能 (AI) agent を導入しています。Copilot app では、issue の選択、agent の実行、変更のレビュー、プルリクエスト (PR) のマージを一か所から指示できます。このレッスンでは、app をインストールして接続し、プロジェクトについての会話を始めます。
 
 > [!NOTE]
-> 対象となる Copilot プランが必要です。Copilot Student またはいずれかの有料プラン (Pro、Pro+、Business、Enterprise) を利用してください。Copilot Business または Copilot Enterprise を使用している場合、アプリを動作させるには管理者が **Copilot CLI** ポリシーを有効にする必要があります。
+> 対象となる Copilot プランが必要です。Copilot Free、Copilot Student、または有料プラン (Pro、Pro+、Business、Enterprise) を利用してください。Copilot Business または Copilot Enterprise では、管理者が **GitHub Copilot app** policy を有効にする必要があります。
 
-## GitHub Copilot app をインストールして構成する
+## GitHub Copilot app をインストールして設定する
 
-GitHub Copilot app を使用するには、まずアプリをインストールします。Windows、macOS、Linux 向けのバージョンが用意されています。アプリをインストールして認証し、Tailspin Toys リポジトリを追加します。
+GitHub Copilot app は Windows、macOS、Linux で利用できます。アプリをインストールして認証し、Tailspin Toys リポジトリを追加します。
 
-1. ブラウザーで [GitHub Copilot app のランディングページ][download-app]を開きます。
-2. 使用しているプラットフォーム向けのアプリをダウンロードし、ランディングページの手順に従ってインストールします。
-3. インストールが完了したら、アプリを開きます。
-4. **Sign in to GitHub** を選択し、画面の指示に従って GitHub.com または GHE.com のアカウントでサインインします。データ所在地に対応した GitHub Enterprise Cloud を使用している場合は **GitHub Enterprise Cloud** を選択し、求められたら `*.ghe.com` のホスト名を入力します。
+1. ブラウザーで [GitHub Copilot app のランディング ページ][download-app]を開きます。
+2. 使用している platform 用の app をダウンロードし、案内に従ってインストールします。
+3. インストール後に app を開きます。
+4. **Sign in to GitHub** を選択し、GitHub.com または GHE.com アカウントでサインインします。データ所在地を使う GitHub Enterprise Cloud の場合は **GitHub Enterprise Cloud** を選択し、求められたら `*.ghe.com` の host name を入力します。
 
-   GitHub Enterprise Server を使用している場合は、まずクラウドアカウントでオンボーディングを完了します。その後、**Settings** を開き、**Accounts**、**Add account**、**GitHub Enterprise Server** の順に選択します。[Enterprise Server のサインインガイド][ghes-sign-in]に従い、ブラウザーでアプリを承認します。
+   GitHub Enterprise Server を使用する場合は、まず cloud account で onboarding を完了します。その後 **Settings**、**Accounts**、**Add account**、**GitHub Enterprise Server** の順に選択します。[Enterprise Server のサインイン ガイド][ghes-sign-in]に従って、ブラウザーで app を承認します。
 
-5. 認証後、リポジトリを接続するよう求められます。先ほど作成した `<YOUR_GITHUB_HANDLE>/tailspin-toys` という名前の Tailspin Toys リポジトリを選択します。
-6. **Continue** を選択してオンボーディングを続けます。
-7. テーマの選択を求められたら、最も好みのものを選び、**Finish** を選択します。
+5. onboarding で repository を選ぶ場合は、template から作成した Tailspin Toys repository を選択します。repository の選択を省略して、onboarding 後に追加することもできます。
+6. theme を選んで onboarding を完了します。
+7. sidebar の **Sessions** に repository が表示されることを確認します。すでに表示されていれば、再度追加する必要はありません。
+8. repository がまだ接続されていない場合は、**Sessions** の横にある **+** を選択して session を作成し、**Add GitHub repository** を選択します。前提条件のレッスンで控えた owner と repository name を使います。
+9. repository が sidebar に表示されることを確認します。この画面では `tailspin-toys` などの repository folder が **Sessions** の下にまとまり、その下に個々の session が表示されます。
 
-> [!NOTE]
-> Tailspin Toys のコピーが一覧に自動的に表示されなかった場合は、アプリのオンボーディングを完了した後に追加できます。完了すると、Copilot app のホーム画面が表示されます。そこで **Choose from GitHub** を選択し、リポジトリ名 (\<YOUR_GITHUB_HANDLE\>/tailspin-toys) で検索して選択します。これでリポジトリが Copilot app に追加されます。
+## workspace を確認する
 
-## ワークスペースを確認する
+プロジェクトを接続したら、sidebar の各領域を確認します。
 
-プロジェクトを接続したら、各領域を確認します。アプリのサイドバーは、主に次の領域で構成されています。
+- **New**: Copilot との新しい chat session を開始します。
+- **Pull requests**: app に統合された GitHub の pull request (PR) を参照、絞り込み、CI 状態の確認、レビューに使います。
+- **Issues**: GitHub issue を参照、絞り込み、issue からの session 開始に使います。
+- **Automations**: schedule またはオンデマンドで実行する agent task を保存します。やることリストや定期的な保守などを任せられます。まとめでは次の手順として紹介しますが、別の演習ではありません。
+- **Customize**: Model Context Protocol (MCP) server、plugin、skill などの component を追加します。後で Playwright MCP を設定します。
+- **Chats**: branch や専用 workspace が不要な質問やブレインストーミング向けの軽い会話です。最初の chat を始めると表示されます。表示されない場合は **Sessions** の横にある **+** を選択して、最初の chat を開始します。
+- **Sessions**: repository folder と agent session をまとめます。repository 名 (例: `tailspin-toys`) を選択すると repository view が開き、その下の session を選ぶと会話に戻ります。session ごとに分離された workspace が使われるため、複数の作業を並行しても変更が競合しません。星評価を追加する際に最初の session を開始します。
 
-- **New** - 名前のとおり、ここから Copilot との新しいチャットセッションを開始できます。
-- **Pull requests** - アプリの GitHub ネイティブ統合を通じて表示される pull request です。アプリを離れずに、pull request の参照や絞り込み、CI ステータスの確認、pull request のレビューを行えます。
-- **Issues** - 同じように表示される Issue です。Issue の参照や絞り込み、Issue からのセッション開始を行えます。
-- **Automations** - スケジュールまたはオンデマンドで実行する、保存済みのエージェントタスクです。やることリストの管理、定期的なプロジェクトの保守、その他の手間のかかる作業を任せるのに役立ちます。振り返りでは次のステップとしてリンクを紹介し、追加の演習にはしません。
-- **Customize** - MCP server、プラグイン、スキルなどのコンポーネントによって、Copilot app に機能を追加します。Playwright MCP の設定に使用します。
-- **Chats** - 独自のブランチやワークスペースを必要としない、質問やブレインストーミング向けの簡易的な会話です。このレッスンの最後に試します。
-- **Sessions** - エージェントが作業する場所です。各セッションは分離された独自のワークスペースで実行されるため、変更が競合することなく複数のセッションを同時に実行できます。次のレッスンで最初のセッションを開始します。
-
-ワークショップを進めながら、ワークスペースを確認していきます。
+ワークショップを進めながら workspace の使い方を確認します。
 
 > [!TIP]
-> 迷ったときは Copilot に質問しましょう。操作方法がわからない場合や、何かが可能かどうか知りたい場合は、Copilot に尋ねると案内してくれます。
+> 操作がわからない場合や機能の有無を知りたい場合は、Copilot に質問して案内を受けてください。
 
-### 用意されたバックログを確認する
+### 用意されたバックログを見つける
 
-バックログのないプロジェクトはほとんどなく、Tailspin Toys も例外ではありません。テンプレートからリポジトリを作成したときに用意された、現在のバックログを確認しましょう。
+template 作成時に用意されたバックログを確認します。
 
-1. サイドバーで **Issues** を選択します。
-2. Issue 番号を決めつけず、次のタイトルで検索します。
-
+1. sidebar の **Sessions** で Tailspin Toys repository folder を選びます。個々の session ではありません。repository 上部の navigation で **Issues** を選択します。
+2. issue 番号を前提にせず、タイトルで次の issue を探します。
    - Allow users to filter games by category and publisher
    - Update our repository coding standards
-
-3. Issue を選択して詳細を読みます。各 Issue はエージェントセッションの開始点にもなります。小規模な最初の変更を完了した後、フィルター機能の Issue から作業を開始します。
+3. issue を選択して詳細を読みます。issue から agent session を開始できます。最初の小さな変更を完了した後、絞り込み issue から作業します。
 
 > [!NOTE]
-> **Issues** と **Pull requests** の項目一覧は自動的に絞り込まれ、Copilot app に追加したリポジトリの項目だけが表示されます。ほかのリポジトリの作業項目を表示するには、そのリポジトリをアプリに追加してください。
+> **Issues** と **Pull requests** の一覧は、Copilot app に追加した repository の項目だけを表示するよう自動的に絞り込まれます。他の repository の作業項目を見るには、その repository を app に追加します。
 
 ## クイックチャットを試す
 
-アプリに慣れるには、アプリ自体について質問するのが効果的です。その用途には **quick chat** が適しています。Quick chats ではブランチや worktree を作成せずに質問やブレインストーミングができるため、セッションを必要としない、その場限りの簡単な質問に最適です。
+**Quick chat** では、branch や worktree を作らずに質問やブレインストーミングができます。その場限りの質問に適しています。
 
-1. サイドバーで **Chats** の横にある **+** を選択し、新しいチャットを開きます。
-2. アプリのセッションがどのように動作するかを尋ねます。
+1. sidebar の **Chats** の横にある **+** を選択します。**Chats** がまだ表示されない場合は、**Sessions** の横にある **+** を選択して最初の chat を始めます。
+2. app 自体の session について、次の質問を送ります。
 
    ```plaintext
    How does the GitHub Copilot app use worktrees?
    ```
 
-3. 会話ビューで回答を読みます。各セッションが分離された独自の git worktree で実行されるため、変更が競合することなく複数のエージェントを並列実行できることがわかります。会話はいつでも継続でき、新しいチャットも開始できます。
+3. 会話ビューで回答を読みます。各 session が分離された git worktree を使うため、複数の agent を並行して動かしても変更が競合しないことを確認します。会話は続けることも、新しい chat を開始することもできます。
 
 ## まとめと次のステップ
 
-GitHub Copilot app をインストールし、プロジェクトを接続して、ワークスペースを確認しました。学習した内容は次のとおりです。
+GitHub Copilot app をインストールし、プロジェクトを接続して workspace を確認しました。具体的には、次のことを行いました。
 
-- アプリをインストールして GitHub にサインインする。
-- GitHub リポジトリからプロジェクトを追加する。
-- ワークスペースを確認し、**Issues** で用意されたバックログを見つける。
-- クイックチャットを使って、その場限りの簡単な質問をする。
+- app をインストールして GitHub にサインインしました。
+- GitHub repository からプロジェクトを追加しました。
+- workspace を確認し、**Issues** で用意されたバックログを見つけました。
+- quick chat を使って、その場限りの質問をしました。
 
-次は、最初のエージェントセッションを開始し、ゲームカードに星評価を表示する最初の変更をプロジェクトに加えます。[レッスン 2「星評価の追加で小さな成果を得る」][next-lesson]に進んでください。
+次は、[最初の agent session を開始し][next-lesson]、ゲーム カードに星評価を表示します。
 
 ## リソース
 
 - [GitHub Copilot app について][about-copilot-app]
-- [GitHub Copilot app の概要][getting-started]
-- [GitHub Copilot app でのエージェントセッションの操作][agent-sessions]
+- [GitHub Copilot app の使用を開始する][getting-started]
+- [GitHub Copilot app で agent session を操作する][agent-sessions]
 
 [next-lesson]: ../2-add-star-rating/
 [about-copilot-app]: https://docs.github.com/copilot/concepts/agents/github-copilot-app

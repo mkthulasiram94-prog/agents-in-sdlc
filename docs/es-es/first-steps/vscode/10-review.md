@@ -18,7 +18,7 @@ Has:
 - inspeccionado el contexto del chat y realizado una prueba de humo antes de que Git escribiera nada.
 - publicado con **Source Control** y un mensaje de commit redactado por Copilot.
 - planificado una funcionalidad en el modo Plan antes de modificar nada.
-- habilitado GitHub MCP y creado incidencias desde el chat.
+- habilitado el servidor de Model Context Protocol (MCP) de GitHub y creado incidencias desde el chat.
 - creado, revisado y combinado una solicitud de incorporación de cambios desde VS Code.
 - delegado una funcionalidad a una sesión en la nube.
 

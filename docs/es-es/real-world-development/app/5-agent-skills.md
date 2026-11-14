@@ -86,7 +86,7 @@ Has personalizado y utilizado una habilidad de agente existente. En esta lecció
 - has personalizado el formato de sus resultados.
 - has ejecutado la habilidad y revisado su salida.
 
-Este cambio acompañará al filtrado en la PR de la funcionalidad. A continuación, permitirás que Copilot interactúe directamente con el sitio [mediante el servidor MCP de Playwright][next-lesson].
+Este cambio acompañará al filtrado en la solicitud de incorporación de cambios (PR) de la funcionalidad. A continuación, permitirás que Copilot interactúe directamente con el sitio [mediante el servidor de Model Context Protocol (MCP) de Playwright][next-lesson].
 
 ## Más ejemplos de habilidades
 

@@ -55,7 +55,7 @@ Ahora pedirás a la habilidad Microsoft Foundry que genere la estructura del age
     - el servicio apunta a `agent/backer-concierge`.
     - el paquete del servicio desplegado incluye su propia copia generada del catálogo.
     - un script o paso de compilación actualiza esa copia desde `db/catalog.json`, en lugar de mantener dos catálogos editados a mano.
-    - el agente usa el despliegue del modelo seleccionado y la API Responses.
+    - el agente usa el despliegue del modelo seleccionado y la interfaz de programación de aplicaciones (API) Responses.
     - las instrucciones rechazan explícitamente los datos que no aparecen en el catálogo.
     - no hay credenciales, tokens de acceso, archivos `.env` ni archivos de entorno de `.azure` preparados para incluirse en un commit.
 
